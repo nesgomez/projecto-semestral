@@ -1,0 +1,7 @@
+{
+  "name": "miaplicacion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
