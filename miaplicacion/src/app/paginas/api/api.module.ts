@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ApiPageRoutingModule } from './api-routing.module';
 
 import { ApiPage } from './api.page';
+import { HeaderComponent } from 'src/app/componentes/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ApiPageRoutingModule
+    ApiPageRoutingModule,
+    HeaderComponent
   ],
   declarations: [ApiPage]
 })
