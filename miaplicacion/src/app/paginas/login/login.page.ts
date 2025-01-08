@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
     }
     else{
       this.mensaje = " ";
-      this.storage.set("sesionID",true);
+      this.storage.set("sessionID",true)
       this.route.navigate(['/home']);
     }
 

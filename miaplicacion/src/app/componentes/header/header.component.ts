@@ -12,7 +12,6 @@ export class HeaderComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-  @Input() titulo_header: string="";
+  @Input() titulo_header: string = "";
 
 }

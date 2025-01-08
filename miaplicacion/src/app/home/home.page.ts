@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +9,28 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-  nombre : string="";
-  mensaje: string ="";
-  
-  mostrar_nombre(){
-    if(this.nombre== ""){
-      this.mensaje= "Error debe ingresar un nombre";
-    }
-    
-    else
-    this.mensaje =""
+  constructor(private storage:Storage) {
+    this.init_storage();
+  }
+  nombre : string = "";
+  NombreUsuario : string = "";
+  mensaje : string = "";
+  async init_storage(){
+    await this.storage.create();
+
   }
 
+  mostrar_nombre(){
+   if (this.nombre == ""){
+    this.mensaje =" Error debe ingresar un nombre";
+   }
+   else{
+    this.mensaje = " ";
+   }
+  }
+  async ngOnInit() {
+    const datosUsuario = await this.storage.get('datosUsuario');
+    this.NombreUsuario = datosUsuario?.nombreUsuario
+  }
 
 }

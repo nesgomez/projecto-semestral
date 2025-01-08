@@ -38,7 +38,7 @@ export class RegistroPage implements OnInit {
         this.mensaje="las contraseñas no coinciden "
       }
       else{
-        //almacenar datos en el storage - crear el usuario  
+        //alamcenar datos en el storage - crear el usuario  
         this.mensaje= " "
         this.storage.set("datosUsuario",{"nombre":this.nombre,"nombreUsuario":this.nombreUsuario,"password":this.password})
         
